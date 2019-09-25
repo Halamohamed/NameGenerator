@@ -49,13 +49,13 @@ public class NameService {
     }
 
     public String slumpFlickNamn(){
-        int i = generator.getNumber(1000);
+        int i = generator.getNumber(19391);
         String name = femaleName().get(i);
         return name;
     }
 
     public String slumpPojkNamn(){
-        int i = generator.getNumber(1010);
+        int i = generator.getNumber(19499);
         String name = maleName().get(i);
         return name;
     }
@@ -64,6 +64,30 @@ public class NameService {
         int i = generator.getNumber(100);
         String name = lastName().get(i);
         return name;
+    }
+
+    public List<String> FlerSlumpFlickNamn(){
+        List<String> names = new ArrayList<>();
+        for (int i= 0; i< 10; i++){
+            names.add(slumpFlickNamn());
+        }
+        return names;
+    }
+
+    public List<String> FlerSlumpPojkNamn(){
+        List<String> names = new ArrayList<>();
+        for (int i= 0; i< 10; i++){
+            names.add(slumpPojkNamn());
+        }
+        return names;
+    }
+
+    public List<String> FlerSlumpEfterNamn(){
+        List<String> names = new ArrayList<>();
+        for (int i= 0; i< 10; i++){
+            names.add(slumpEfterNamn());
+        }
+        return names;
     }
 
 

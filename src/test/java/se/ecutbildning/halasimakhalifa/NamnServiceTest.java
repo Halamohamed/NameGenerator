@@ -75,4 +75,28 @@ public class NamnServiceTest {
         Assert.assertNotNull(actual);
         System.out.println("expected : " + expected + "\nactual : " + actual);
     }
+
+    @Test
+    public void testFlerSlumpFlickNamn(){
+        List<String> actual = new ArrayList<>();
+        actual = nameService.FlerSlumpFlickNamn();
+        Assert.assertNotNull(actual);
+        System.out.println(actual);
+    }
+
+    @Test
+    public void testFlerSlumpPojkNamn(){
+        List<String> actual = new ArrayList<>();
+        actual = nameService.FlerSlumpPojkNamn();
+        Assert.assertNotNull(actual);
+        System.out.println(actual);
+    }
+
+    @Test
+    public void testFlerSlumpEfterNamn(){
+        List<String> actual = new ArrayList<>();
+        actual = nameService.FlerSlumpEfterNamn();
+        Assert.assertNotNull(actual);
+        System.out.println(actual);
+    }
 }
