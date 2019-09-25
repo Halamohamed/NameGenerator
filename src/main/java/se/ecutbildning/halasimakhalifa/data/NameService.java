@@ -9,42 +9,61 @@ import java.util.List;
 
 public class NameService {
 
+    private static List<String> male = new ArrayList<>();
+    private static List<String> female = new ArrayList<>();
+    private static List<String> lastname = new ArrayList<>();
+    SlumpGenerator generator = new SlumpGenerator();
     public List<String> maleName(){
-
-        List<String> names = new ArrayList<>();
-        try (BufferedReader reader = Files.newBufferedReader(Paths.get("PojkNamn.txt"))){
+               try (BufferedReader reader = Files.newBufferedReader(Paths.get("PojkNamn.txt"))){
             String line;
             while ((line = reader.readLine()) != null){
-                names.add(line);
+                male.add(line);
             }
         }catch (IOException ex){
             ex.printStackTrace();
-        }return names;
+        }return male;
     }
 
     public List<String> femaleName(){
-        List<String> names = new ArrayList<>();
+
         try(BufferedReader reader = Files.newBufferedReader(Paths.get("FlickNamn.txt"))){
             String line;
             while ((line = reader.readLine()) != null){
-                names.add(line);
+                female.add(line);
             }
         }catch (IOException ex){
             ex.printStackTrace();
-        }return names;
+        }return female;
     }
 
     public List<String> lastName(){
 
-        List<String> names = new ArrayList<>();
         try(BufferedReader reader = Files.newBufferedReader(Paths.get("EfterNamn.txt"))){
             String line ;
             while ((line = reader.readLine()) != null){
-                names.add(line);
+                lastname.add(line);
             }
         }catch (IOException ex){
             ex.printStackTrace();
-        }return names;
+        }return lastname;
+    }
+
+    public String slumpFlickNamn(){
+        int i = generator.getNumber(1000);
+        String name = femaleName().get(i);
+        return name;
+    }
+
+    public String slumpPojkNamn(){
+        int i = generator.getNumber(1010);
+        String name = maleName().get(i);
+        return name;
+    }
+
+    public String slumpEfterNamn(){
+        int i = generator.getNumber(100);
+        String name = lastName().get(i);
+        return name;
     }
 
 

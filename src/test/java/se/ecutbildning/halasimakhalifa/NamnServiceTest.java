@@ -10,30 +10,34 @@ import java.util.List;
 
 public class NamnServiceTest {
     NameService nameService;
+    List<String> female;
+    List<String> male;
+    List<String> lastname;
 
     @Before
     public void setup(){
         nameService = new NameService();
+
     }
     @Test
     public void testMaleName(){
-
-        List<String> names = new ArrayList<>();
-        names = nameService.maleName();
+        male = new ArrayList<>();
+        male = nameService.maleName();
 
         int expected = 19499;
-        Assert.assertEquals(expected, names.size());
+        Assert.assertEquals(expected, male.size());
         //System.out.println(nameService.maleName());
 
     }
 
     @Test
     public void testFemaleName(){
-        List<String> names = new ArrayList<>();
-        names = nameService.femaleName();
+
+        female = new ArrayList<>();
+        female = nameService.femaleName();
 
         int expected = 19391;
-        Assert.assertEquals(expected, names.size());
+        Assert.assertEquals(expected, female.size());
 
        // System.out.println(nameService.femaleName());
 
@@ -41,10 +45,34 @@ public class NamnServiceTest {
 
     @Test
     public void testLastName(){
-        List<String> names = new ArrayList<>();
-        names = nameService.lastName();
+        lastname = new ArrayList<>();
+        lastname = nameService.lastName();
+        int expected = 200;
+        Assert.assertEquals(expected, nameService.lastName().size());
+        System.out.println(nameService.lastName().size());
+    }
 
-        int expected = 100;
-        Assert.assertEquals(expected, names.size());
+    @Test
+    public void testSlumpFlickNamn(){
+        String expected = nameService.slumpFlickNamn();
+        String actual = nameService.slumpFlickNamn();
+        Assert.assertNotNull( actual);
+        System.out.println("expected : " + expected + "\nactual : " + actual);
+    }
+    @Test
+    public void testSulumpPojkNamn(){
+        String expected = nameService.slumpPojkNamn();
+        String actual = nameService.slumpPojkNamn();
+       // Assert.assertEquals(expected, nameService.slumpPojkNamn());
+        Assert.assertNotNull(actual);
+        //System.out.println("expected : " + expected + "\nactual : " + actual);
+    }
+
+    @Test
+    public void testSlumpEfterNamn(){
+        String expected = nameService.slumpEfterNamn();
+        String actual = nameService.slumpEfterNamn();
+        Assert.assertNotNull(actual);
+        System.out.println("expected : " + expected + "\nactual : " + actual);
     }
 }
