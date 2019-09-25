@@ -99,4 +99,20 @@ public class NamnServiceTest {
         Assert.assertNotNull(actual);
         System.out.println(actual);
     }
+
+    @Test
+    public void testForOchEfterFlickNamn(){
+        List<String> actual = new ArrayList<>();
+        actual = nameService.slumpForOchEfterFlickNamn();
+        Assert.assertNotNull(actual);
+        System.out.println(actual);
+    }
+    @Test
+    public void testForOchEfterPojkNamn(){
+        List<String> actual = new ArrayList<>();
+        actual = nameService.slumpForOchEfterPojkNamn();
+        Assert.assertNotNull(actual);
+        System.out.println(actual);
+    }
+
 }

@@ -90,5 +90,21 @@ public class NameService {
         return names;
     }
 
+    public List<String> slumpForOchEfterFlickNamn(){
+        List<String> names = new ArrayList<>();
+        for (int i = 0 ; i< 50 ; i++){
+            names.add(slumpFlickNamn()+" "+slumpEfterNamn());
+        }return names;
+
+    }
+
+    public List<String> slumpForOchEfterPojkNamn(){
+        List<String> names = new ArrayList<>();
+        for (int i = 0 ; i< 50 ; i++){
+            names.add(slumpPojkNamn()+ " " + slumpEfterNamn());
+        }return names;
+
+    }
+
 
 }
